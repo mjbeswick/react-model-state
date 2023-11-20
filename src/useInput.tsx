@@ -7,5 +7,5 @@ export const useInput = (initialValue: string) => {
     setValue(e.target.value);
   };
 
-  return { value, onChange, setValue };
+  return { props: {value, onChange}, setValue , value};
 };
