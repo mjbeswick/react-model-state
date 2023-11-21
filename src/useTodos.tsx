@@ -5,11 +5,7 @@ export const useTodos = () => {
     const [todos, setTodos] = useState(TodoService.getTodos());
 
     useEffect(() => {
-        const unsubscribe = TodoService.onTodosUpdate(setTodos);
-
-        return () => {
-            unsubscribe();
-        };
+        return TodoService.onTodosUpdate(setTodos);
     }, []);
 
     return todos;
